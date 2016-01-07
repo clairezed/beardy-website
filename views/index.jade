@@ -3,3 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  //- p= organizations
+  //- p= orga.name
+  ul
+    each organization, i in organizations
+      li= organization.name
+  hr
+  ul
+    each organization, i in organizationsbis
+      li= organization.name
+
