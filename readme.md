@@ -86,6 +86,9 @@ hide config vars : http://stackoverflow.com/questions/18597510/connect-to-the-da
 
 ## Resoures
 
+### Json DB
+- https://github.com/typicode/lowdb
+
 
 ### Creating node app with API
 - http://blog.modulus.io/build-your-first-http-server-in-nodejs
@@ -99,3 +102,6 @@ hide config vars : http://stackoverflow.com/questions/18597510/connect-to-the-da
 - https://scotch.io/tutorials/use-mongodb-with-a-node-application-on-heroku
 - http://givemethechills.com/how-to-migrate-a-node-js-app-from-heroku-to-openshift/
 - http://blog.mongolab.com/2015/02/fully-managed-dedicated-mongodb-plans-on-heroku/
+
+### Cleaning app
+- https://www.terlici.com/2014/08/25/best-practices-express-structure.html
