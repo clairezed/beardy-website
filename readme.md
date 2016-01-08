@@ -1,6 +1,10 @@
 Beardy website
 =========
 
+## General information
+
+- in progress website : https://beardy-website.herokuapp.com/
+
 ## App creation
 
 You need to have npm installed
