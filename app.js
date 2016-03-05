@@ -1,29 +1,20 @@
 "use strict";
 
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+require('./response');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var api = require('./routes/api');
+// Base dependencies =====================================================
+var express = require('express'),
+    http = require('http'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    config = require('./config')(),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser');
 
-
-//using let
 let app = express();
-// var app = express();
 
-// database -------------------------------------
-const low = require('lowdb')
-const storage = require('lowdb/file-async')
-
-const db = low('data/db.json', { storage })
-
-
-// view engine setup ----------------------------
+// view engine setup ------------------------------------------------
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -33,25 +24,51 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// app.use(express.methodOverride());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
+  debug: true,
   indentedSyntax: true,
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Database =====================================================
 
-app.use((req,res,next) => {
-    req.db = db;
-    next();
-});
+// database lowdb ---------------------------------------------------
+// const low = require('lowdb')
+// const storage = require('lowdb/file-async')
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/api', api);
+// const db = low('data/db.json', { storage })
 
-// errors handlers ------------------------------
+// app.use((req,res,next) => {
+//     req.db = db;
+//     next();
+// });
+
+// database mongo ---------------------------------------------
+const db = require('./db')
+
+db.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/beardyWebsite', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.')
+    process.exit(1)
+  } else {
+    console.log('connected to mongo')
+  }
+})
+
+// Routing ==========================================================
+
+const homeController = require('./controllers/home');
+var apiController = require('./controllers/api');
+
+app.use('/', homeController);
+app.use('/api', apiController);
+
+
+// Errors handlers ==================================================
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -59,8 +76,6 @@ app.use((req, res, next) => {
   err.status = 404;
   next(err);
 });
-
-// error handlers
 
 // development error handler
 // will print stacktrace

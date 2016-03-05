@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  color: #333333; }
+
+header {
+  margin-bottom: 50px; }
+
+a {
+  color: #1d3777; }
+
+h1 {
+  font-weight: 900;
+  font-size: 5em; }
+
+h2 {
+  font-weight: 700;
+  font-size: 3em; }
+
+/*# sourceMappingURL=style.css.map */

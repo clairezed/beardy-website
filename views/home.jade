@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  header
+    h1.text-center Beardy website
+    h2.text-center Ces entreprises barbées qui nous entourent
+    br
+
+  .container
+    .row
+      each organization, i in organizations
+        .col-md-4
+          a(href= "/#{organization._id}")
+            .thumbnail
+              .caption
+                h3= organization.name
+            //- li= organization.name
+            //- li
+            //-   a(href= "/#{organization.id}")= organization.name
+  //- h1= title
+  //- p Welcome to #{title}
+  //- p= organizations
+  //- p= orga.namecontent
+  //- hr
+  //- ul
+  //-   each organization, i in organizationsbis
+  //-     li= organization.name
+

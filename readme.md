@@ -1,6 +1,8 @@
 Beardy website
 =========
 
+*2016/01 - Development in progress*
+
 ## General information
 
 - in progress website : https://beardy-website.herokuapp.com/
@@ -29,16 +31,45 @@ $ git add .
 $ git commit -m"whatever"
 ```
 
- run the app with this command:
+ run the app in `localhost:3000` with this command:
 
 ```
-$ DEBUG=myapp:* npm start
+$ DEBUG=beardy-website:* npm start
 ```
+
+When using config.js :
+```
+$ node app.js dev // ou 'staging', 'production'
+```
+
 
 To install and save in package.json (`-S` = `--save`)
 ```
 npm install -S warehouse
 ```
+
+## Database
+
+Check mongo status
+```
+$ service mongod status
+```
+
+When you first store data in the database, such as by creating a collection, MongoDB creates the database. For example, the following creates both the database `beardyWebsite` and the collection `organizations` during the insert() operation:
+
+```
+$ mongo \\ connect to mongo shell
+> show dbs \\ list all dbs
+> use beardyWebsite
+> db.organizations.insert( { name: "Lyon BD Festival",  website_url: "http://www.lyonbd.com/", beardy_date: "Friday, June 14, 2013"} );
+> db.organizations.find().pretty()
+```
+
+## Seed data
+
+To populate your db with data in your `seeds` folder, just run `$ seed`.
+cf https://www.npmjs.com/package/node-mongo-seeds
+
 
 ## Deploying to heroku
 
@@ -88,11 +119,22 @@ $ heroku config
 hide config vars : http://stackoverflow.com/questions/18597510/connect-to-the-database-in-a-heroku-node-js-app-without-revealing-authentication
 
 
+## Tests
+
+To run tests :
+```
+$ jasmine-node ./tests
+```
+
+
 ## Resoures
 
 ### Json DB
 - https://github.com/typicode/lowdb
 
+### Basic app with express
+- http://zellwk.com/blog/crud-express-and-mongodb-2
+- http://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
 
 ### Creating node app with API
 - http://blog.modulus.io/build-your-first-http-server-in-nodejs
@@ -109,3 +151,20 @@ hide config vars : http://stackoverflow.com/questions/18597510/connect-to-the-da
 
 ### Cleaning app
 - https://www.terlici.com/2014/08/25/best-practices-express-structure.html
+
+
+### Todo
+
+- mongo db connection
+- serialize api data
+- find url helper
+- styling with bootstrap ?
+
+### if continuing project
+- basic authentication
+- form to add events
+
+
+### Todo tuto :
+- npm install -g jasmine-node
+- check config file / /wwww node script : how to mix both ? What to use ?

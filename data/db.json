@@ -1,16 +1,31 @@
 {
   "organizations": [
     {
+      "id": "1",
       "name": "Communauté d'agglomération d'Epinal",
       "website_url": "http://www.agglo-epinal.fr/"
     },
     {
+      "id": "2",
       "name": "Festival d'Angouleme",
       "website_url": "http://www.bdangouleme.com/"
     },
     {
+      "id": "3",
       "name": "Festival Lumière",
       "website_url": "http://www.festival-lumiere.org/"
+    },
+    {
+      "id": "4",
+      "name": "Lyon BD Festival",
+      "website_url": "http://www.lyonbd.com/",
+      "date": "Friday, June 14, 2013"
+    },
+    {
+      "id": "5",
+      "name": "Journalisme et citoyenneté, la Sorbonne",
+      "website_url": "http://www.journalisme.com/",
+      "date": "Friday, June 14, 2013"
     }
   ]
 }
