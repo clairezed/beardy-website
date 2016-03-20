@@ -50,9 +50,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // database mongo ---------------------------------------------
 const db = require('./db')
-console.log('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname);
+console.log(config.mongo.url);
+// console.log('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname);
 
-db.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname, function(err) {
+// db.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname, function(err) {
+db.connect(config.mongo.url, function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)
