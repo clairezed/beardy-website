@@ -2,27 +2,74 @@ $body-bg: #f9f9f9
 $font-color: #333333
 $link-color: #1d3777
 
-$font-size-base: 14px
+$font-size-base: 1.4rem
 $font-family-sans-serif: 'Roboto', Helvetica, Arial, sans-serif
 
-body
-  padding: 50px
+body, html
   font-family: $font-family-sans-serif
-  font-size: $font-size-base
   background-color: $body-bg
   color: $font-color
 
-header
-  margin-bottom: 50px
+html
+  font-size: 62.5% // on passe la taille de base à 10px pour les unités en rem : 10px = 1rem (1,4rem = 14px etc)
+
+body
+  font-size: $font-size-base
 
 a
   color: $link-color
+  &:hover, &:focus
+    color: darken($link-color, 5%)
+    text-decoration: none
 
+// Header ---------------------------------
 
-h1
+header
+  margin-top: 30px
+  margin-bottom: 50px
+.navbar
+  margin-bottom: 0
+.navbar-brand
   font-weight: 900
-  font-size: 5em
+  font-size: 5rem
+  color: $font-color
+  display: block
+  width: 100%
+  &.baseline
+    font-weight: 700
+    font-size: 3rem
+.navbar-brand:not(.baseline)
+  &:hover, &:active
+    color: darken($font-color, 10%)
 
-h2
+.nav li a
+  color: #bbb
+  text-transform: uppercase
   font-weight: 700
-  font-size: 3em
+  &:hover, &:active
+    color: #999
+    background-color: transparent
+    // text-decoration: underline
+    // border-bottom: 5px solid darken($font-color, 10%)
+
+// h1
+//   font-weight: 900
+//   font-size: 5em
+
+// h2
+//   font-weight: 700
+//   font-size: 3em
+
+
+// THUMBNAIL ==================
+
+.home-thumbnail
+  min-height: 150px
+  .caption
+    font-size: 2rem
+    text-transform: uppercase
+    text-align: center
+    font-weight: 700
+  .footer
+    padding: 9px
+    text-align: right

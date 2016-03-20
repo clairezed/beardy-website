@@ -1,24 +1,20 @@
-// console.log("Organization Model")
+var db = require('../db')
+var mongo = require('mongodb')
+
+exports.all = function(cb) {
+  var collection = db.get().collection('organizations')
+
+  collection.find().toArray(function(err, docs) {
+    cb(err, docs)
+  })
+}
+
+exports.one = function(id, cb) {
+  var id = new mongo.ObjectID(id);
+  var collection = db.get().collection('organizations')
 
 
-// var Model = require("./base"),
-//   model = new Model();
-// console.log(model);
-//   // crypto = require("crypto"),
-// var organizationModel = model.extend({
-//   insert: function(data, callback) {
-//     // data.ID = crypto.randomBytes(20).toString('hex');
-//     this.collection().insert(data, {}, callback || function(){ });
-//   },
-//   update: function(data, callback) {
-//     this.collection().update({ID: data.ID}, data, {}, callback || function(){ });
-//   },
-//   getList: function(callback, query) {
-//     this.collection().find(query || {}).toArray(callback);
-//   },
-//   remove: function(ID, callback) {
-//     this.collection().findAndModify({ID: ID}, [], {}, {remove: true}, callback);
-//   }
-// });
-// // console.log(organizationModel.getList());
-// module.exports = organizationModel;
+  collection.find({ _id: id }).toArray(function(err, docs) {
+    cb(err, docs[0])
+  })
+}

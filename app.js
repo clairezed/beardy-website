@@ -8,11 +8,12 @@ var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
-    config = require('./config')(),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser');
 
 let app = express();
+
+var config = require('./config')(app.get('env'));
 
 // view engine setup ------------------------------------------------
 app.set('views', path.join(__dirname, 'views'));
@@ -49,8 +50,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // database mongo ---------------------------------------------
 const db = require('./db')
+console.log('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname);
 
-db.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/beardyWebsite', function(err) {
+db.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname, function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)

@@ -153,6 +153,12 @@ $ jasmine-node ./tests
 - https://www.terlici.com/2014/08/25/best-practices-express-structure.html
 
 
+### Sexy grid plugin
+- https://codyhouse.co/demo/squeezebox-portfolio-template/index.html#0
+- http://www.rich-harris.co.uk/ramjet/
+- https://codyhouse.co/gem/animated-page-transition-2/
+
+
 ### Todo
 
 - mongo db connection

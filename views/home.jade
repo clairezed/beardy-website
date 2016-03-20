@@ -1,19 +1,15 @@
 extends layout
 
 block content
-  header
-    h1.text-center Beardy website
-    h2.text-center Ces entreprises barbées qui nous entourent
-    br
 
   .container
     .row
       each organization, i in organizations
-        .col-md-4
+        .col-md-3.col-sm-4
           a(href= "/#{organization._id}")
-            .thumbnail
-              .caption
-                h3= organization.name
+            .thumbnail.home-thumbnail
+              .caption= organization.name
+              .footer= organization.date
             //- li= organization.name
             //- li
             //-   a(href= "/#{organization.id}")= organization.name

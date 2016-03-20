@@ -1,22 +1,57 @@
-body {
-  padding: 50px;
+body, html {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   background-color: #f9f9f9;
   color: #333333; }
 
-header {
-  margin-bottom: 50px; }
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.4rem; }
 
 a {
   color: #1d3777; }
+  a:hover, a:focus {
+    color: #182e62;
+    text-decoration: none; }
 
-h1 {
+header {
+  margin-top: 30px;
+  margin-bottom: 50px; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.navbar-brand {
   font-weight: 900;
-  font-size: 5em; }
+  font-size: 5rem;
+  color: #333333;
+  display: block;
+  width: 100%; }
+  .navbar-brand.baseline {
+    font-weight: 700;
+    font-size: 3rem; }
 
-h2 {
-  font-weight: 700;
-  font-size: 3em; }
+.navbar-brand:not(.baseline):hover, .navbar-brand:not(.baseline):active {
+  color: #1a1a1a; }
+
+.nav li a {
+  color: #bbb;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .nav li a:hover, .nav li a:active {
+    color: #999;
+    background-color: transparent; }
+
+.home-thumbnail {
+  min-height: 150px; }
+  .home-thumbnail .caption {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700; }
+  .home-thumbnail .footer {
+    padding: 9px;
+    text-align: right; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,12 +3,12 @@ var router = express.Router();
 var mongo = require('mongodb')
 var db = require('../db')
 
+var Organizations = require('../models/organization')
+
 // INDEX =======================================
-router.get('/', function(req, res, next) {
 
-  var organization_collection =  db.get().collection('organizations');
-
-  organization_collection.find().toArray(function(err, docs) {
+router.get('/', (req, res, next) => {
+  Organizations.all((err, docs) => {
     if (err) {
       throw err;
     }

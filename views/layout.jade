@@ -8,7 +8,28 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
     script(src='./js/bootstrap.min.js')
   body
+    header
+      .container
+        nav.navbar
+          .navbar-header
+            a.navbar-brand(href= "/") Beardy website
+            //- br
+          ul.nav.navbar-nav.pull-right
+            li
+              a(href= "/about") A propos
+        .navbar-brand.baseline
+          em Ces entreprises barbées qui nous entourent
+
+      //- .row
+      //-   .col-md-8
+      //-     h1 Beardy website
+      //-   .col-md-4
+      //-     a(href= "/about")
+      //-       | A propos
+      //- h2 Ces entreprises barbées qui nous entourent
+      //- br
     block content
+
 
     //- header
     //-   nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
