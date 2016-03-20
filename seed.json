@@ -1,5 +1,5 @@
 {
 	"undefined": "localhost/beardyWebsite",
-	"dev": "localhost/beardyWebsite",
-	"prod": "localhost/beardyWebsite"
+	"development": "localhost/beardyWebsite",
+	"production": "ds013738.mongolab.com/heroku_zbpzzzms"
 }
