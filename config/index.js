@@ -1,7 +1,5 @@
 // DEV :  mongodb://127.0.0.1:27017/beardyWebsite
 // PROD : mongodb://<dbuser>:<dbpassword>@ds013738.mlab.com:13738/heroku_zbpzzzms
-          // mongodb://heroku_zbpzzzms:heroku_zbpzzzms@ds013738.mlab.com:13738/heroku_zbpzzzms
-          // mongodb://heroku_zbpzzzms:urqbl8rp5ialabnfae7487p0o@ds013738.mongolab.com:13738/heroku_zbpzzzms
 //        mongodb://example:example@ds053312.mongolab.com:53312/todolist"
 
 

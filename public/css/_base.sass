@@ -1,0 +1,81 @@
+/* Thème de base, layout */
+*, *:after, *:before
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+.clearfix:before, .clearfix:after
+  display: table
+  content: ''
+.clearfix:after
+  clear: both
+
+body
+  background: $color_back
+  color: $color_font
+  font-weight: 400
+  font-size: $font_size_base
+  font-family: $sansserif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  overflow: hidden
+  overflow-y: scroll // force scroll to appear
+
+
+
+
+a
+  outline: none
+  color: $color_link
+  text-decoration: none
+
+a:hover,
+a:focus
+  color: #333
+  outline: none
+  text-decoration: none
+
+/* helper class when showing content */
+.noscroll
+  overflow: hidden
+
+button:focus
+  outline: none
+  text-decoration: none
+
+
+
+// Header ---------------------------------
+header
+  width: inherit
+  margin-top: 20px
+nav.navbar
+  background-color: $color_back
+  padding-top: 15px
+.navbar-brand
+  color: $color_font
+  display: block
+  height: inherit
+  // width: 100%
+  .navbar-title
+    font-weight: 900
+    font-size: 5rem
+    color: inherit
+    &:hover, &:active
+      color: darken($color_font, 5%)
+  .navbar-baseline
+    font-weight: 700
+    font-size: 2.5rem
+    line-height: 4rem
+    font-style: italic
+
+.nav li a
+  color: #bbb
+  text-transform: uppercase
+  font-weight: 700
+  &:hover, &:active
+    color: #999
+    background-color: transparent
+
+
+.content-body
+  margin-top: 120px
+

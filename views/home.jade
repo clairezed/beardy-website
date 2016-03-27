@@ -2,23 +2,40 @@ extends layout
 
 block content
 
-  .container
-    .row
+  #theGrid.main
+
+    section.grid
       each organization, i in organizations
-        .col-md-3.col-sm-4
-          a(href= "/#{organization._id}")
-            .thumbnail.home-thumbnail
-              .caption= organization.name
-              .footer= organization.date
-            //- li= organization.name
-            //- li
-            //-   a(href= "/#{organization.id}")= organization.name
-  //- h1= title
-  //- p Welcome to #{title}
-  //- p= organizations
-  //- p= orga.namecontent
-  //- hr
-  //- ul
-  //-   each organization, i in organizationsbis
-  //-     li= organization.name
+        a.grid__item(href="##{organization.name}")
+          h2.title.title--preview= organization.name
+          .meta.meta--preview
+            span.meta__date= organization.date
+
+    section.content(style="top:173px;")
+      .scroll-wrap
+        each organization, i in organizations
+          article.content__item
+            //- span.categorry.category--full Test
+            h2.title.title--full= organization.name
+            .meta.meta--full
+              span.meta__date= organization.date
+            .row
+              .col-md-6
+                p= organization.description
+                img.img-responsive(src="./images/#{organization.picture}" )
+              .col-md-6
+                img.img-responsive(src="./images/#{organization.tract}" )
+
+      button.close-button
+        | X
+        span Close
+
+  //- .container
+  //-   .row
+  //-     each organization, i in organizations
+  //-       .col-md-3.col-sm-4
+  //-         a(href= "/#{organization._id}")
+  //-           .thumbnail.home-thumbnail
+  //-             .caption= organization.name
+  //-             .footer= organization.date
 

@@ -4,48 +4,33 @@ html
     title= title
     link(rel='stylesheet', href='./css/bootstrap.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300', type='text/css')
-    link(rel='stylesheet', href='./css/style.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
-    script(src='./js/bootstrap.min.js')
+    link(rel='stylesheet', href='./css/style-grid.css')
+    script(src='./js/modernizr.custom.js')
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    //- script(src='./js/bootstrap.min.js')
   body
-    header
-      .container
-        nav.navbar
-          .navbar-header
-            a.navbar-brand(href= "/") Beardy website
-            //- br
-          ul.nav.navbar-nav.pull-right
-            li
-              a(href= "/about") A propos
-        .navbar-brand.baseline
-          em Ces entreprises barbées qui nous entourent
-
-      //- .row
-      //-   .col-md-8
-      //-     h1 Beardy website
-      //-   .col-md-4
-      //-     a(href= "/about")
-      //-       | A propos
-      //- h2 Ces entreprises barbées qui nous entourent
-      //- br
-    block content
-
-
-    //- header
-    //-   nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-    //-     .container
-    //-       .navbar-header
-    //-         button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse")
-    //-           span.sr-only Toggle navigation
-    //-           span.icon-bar
-    //-           span.icon-bar
-    //-           span.icon-bar
-    //-         a.navbar-brand(href= "/") Beardy website
-    //- .main
-    //-   .container
-    //-     block content
-
-  footer
     .container
-      //- ' © Claire Zuliani - 2016
+      header
+        nav.navbar.navbar-fixed-top
+          .container.inner-container
+            .navbar-brand
+              a.navbar-title(href= "/")
+                | La barbe !
+              .navbar-baseline Site de démonstration d'une extension barbue
+            ul.nav.navbar-nav.pull-right
+              li
+                a(href= "/about") A propos
+
+
+      .content-body
+        block content
+
+
+
+
+    footer
+      .container
+        //- ' © Claire Zuliani - 2016
+    script(src='./js/classie.js')
+    script(src='./js/main.js')
 

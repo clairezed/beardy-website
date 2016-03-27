@@ -1,20 +1,20 @@
 $body-bg: #f9f9f9
-$font-color: #333333
+$color_font: #333333
 $link-color: #1d3777
 
-$font-size-base: 1.4rem
+$font_size_base: 1.4rem
 $font-family-sans-serif: 'Roboto', Helvetica, Arial, sans-serif
 
 body, html
   font-family: $font-family-sans-serif
   background-color: $body-bg
-  color: $font-color
+  color: $color_font
 
 html
   font-size: 62.5% // on passe la taille de base à 10px pour les unités en rem : 10px = 1rem (1,4rem = 14px etc)
 
 body
-  font-size: $font-size-base
+  font-size: $font_size_base
 
 a
   color: $link-color
@@ -32,7 +32,7 @@ header
 .navbar-brand
   font-weight: 900
   font-size: 5rem
-  color: $font-color
+  color: $color_font
   display: block
   width: 100%
   &.baseline
@@ -40,7 +40,7 @@ header
     font-size: 3rem
 .navbar-brand:not(.baseline)
   &:hover, &:active
-    color: darken($font-color, 10%)
+    color: darken($color_font, 10%)
 
 .nav li a
   color: #bbb
@@ -50,7 +50,7 @@ header
     color: #999
     background-color: transparent
     // text-decoration: underline
-    // border-bottom: 5px solid darken($font-color, 10%)
+    // border-bottom: 5px solid darken($color_font, 10%)
 
 // h1
 //   font-weight: 900

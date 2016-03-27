@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
 
 
 // SHOW ========================================
-router.get('/:id', function(req, res) {
+router.get('organizations/:id', function(req, res) {
   var id = new mongo.ObjectID(req.params.id);
   var organization_collection =  db.get().collection('organizations');
 

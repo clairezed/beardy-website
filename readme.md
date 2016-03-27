@@ -63,6 +63,8 @@ $ mongo \\ connect to mongo shell
 > use beardyWebsite
 > db.organizations.insert( { name: "Lyon BD Festival",  website_url: "http://www.lyonbd.com/", beardy_date: "Friday, June 14, 2013"} );
 > db.organizations.find().pretty()
+> db.organizations.remove() // removes one
+> db.organizations.drop() // removes collection
 ```
 
 ## Seed data
@@ -105,7 +107,9 @@ You can check how many dynos are running using the ps command: `$ heroku ps`
 You can also run your app locally via `$ heroku local web`
 
 To start a console : `$ heroku run node`
+
 To connect to heroku server : `$ heroku run bash`
+
 To exit bash : `$ exit`
 
 
@@ -157,20 +161,17 @@ $ jasmine-node ./tests
 - https://codyhouse.co/demo/squeezebox-portfolio-template/index.html#0
 - http://www.rich-harris.co.uk/ramjet/
 - https://codyhouse.co/gem/animated-page-transition-2/
+- http://tympanus.net/Development/AnimatedGridLayout/index2.html
+- http://tympanus.net/Development/BookPreview/
 
 
 ### Todo
 
-- mongo db connection
 - serialize api data
 - find url helper
 - styling with bootstrap ?
+- js plugin to do simili SPA and display info en page
 
 ### if continuing project
 - basic authentication
 - form to add events
-
-
-### Todo tuto :
-- npm install -g jasmine-node
-- check config file / /wwww node script : how to mix both ? What to use ?

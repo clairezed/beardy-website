@@ -65,11 +65,13 @@ db.connect(config.mongo.url, function(err) {
 
 // Routing ==========================================================
 
+const aboutController = require('./controllers/about');
+const apiController = require('./controllers/api');
 const homeController = require('./controllers/home');
-var apiController = require('./controllers/api');
 
-app.use('/', homeController);
+app.use('/about', aboutController);
 app.use('/api', apiController);
+app.use('/', homeController);
 
 
 // Errors handlers ==================================================
