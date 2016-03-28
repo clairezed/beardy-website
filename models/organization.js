@@ -58,11 +58,11 @@ organizationSchema.set("toJSON", { virtuals: true });
 
 var Organization = mongoose.model('Organization', organizationSchema);
 
-Organization.findOne({name: "EADS"}, (err, doc) => {
-  // console.log(doc.date);
-  console.log(doc.date_fr);
-  console.log(doc.slug);
-});
+// Organization.findOne({name: "EADS"}, (err, doc) => {
+//   // console.log(doc.date);
+//   console.log(doc.date_fr);
+//   console.log(doc.slug);
+// });
 
 module.exports = Organization;
 
