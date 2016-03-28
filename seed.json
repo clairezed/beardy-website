@@ -1,5 +1,0 @@
-{
-	"undefined": "localhost/beardyWebsite",
-	"development": "localhost/beardyWebsite",
-	"production": "mongodb://heroku_zbpzzzms:urqbl8rp5ialabnfae7487p0o@ds013738.mongolab.com:13738/heroku_zbpzzzms"
-}

@@ -37,6 +37,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Database =====================================================
 
+// database mongoose ------------------------------------------
+const mongoose   = require('mongoose');
+mongoose.connect(config.mongo.url)
+
+var Organization = require('./models/organization')
+const organizationSeeds = require('./seeds/organizations.json')
+Organization.seed(organizationSeeds)
+// database mongo ---------------------------------------------
+// const db = require('./db')
+// console.log(config.mongo.url);
+
+
+// db.connect(config.mongo.url, function(err) {
+//   if (err) {
+//     console.log('Unable to connect to Mongo.')
+//     process.exit(1)
+//   } else {
+//     console.log('connected to mongo')
+//   }
+// })
+
 // database lowdb ---------------------------------------------------
 // const low = require('lowdb')
 // const storage = require('lowdb/file-async')
@@ -47,21 +68,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     req.db = db;
 //     next();
 // });
-
-// database mongo ---------------------------------------------
-const db = require('./db')
-console.log(config.mongo.url);
-// console.log('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname);
-
-// db.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/'+ config.mongo.dbname, function(err) {
-db.connect(config.mongo.url, function(err) {
-  if (err) {
-    console.log('Unable to connect to Mongo.')
-    process.exit(1)
-  } else {
-    console.log('connected to mongo')
-  }
-})
 
 // Routing ==========================================================
 

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 // var mongo = require('mongodb')
-var db = require('../db')
+// var db = require('../db')
 
 // INDEX =======================================
 router.get('/organizations', function(req, res, next) {

@@ -56,7 +56,8 @@ nav.navbar {
   .navbar-brand .navbar-title {
     font-weight: 900;
     font-size: 5rem;
-    color: inherit; }
+    color: inherit;
+    font-family: "hairy_monster_solidsolid", "Roboto", Helvetica, Arial, sans-serif; }
     .navbar-brand .navbar-title:hover, .navbar-brand .navbar-title:active {
       color: #59554f; }
   .navbar-brand .navbar-baseline {

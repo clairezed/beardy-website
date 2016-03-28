@@ -1,23 +1,35 @@
 var express = require('express');
 var router = express.Router();
-var mongo = require('mongodb')
-var db = require('../db')
+//var mongo = require('mongodb')
+// var db = require('../db')
 
 var Organizations = require('../models/organization')
 
 // INDEX =======================================
 
 router.get('/', (req, res, next) => {
-  Organizations.all((err, docs) => {
+  Organizations.find( function ( err, organizations, count ){
     if (err) {
       throw err;
     }
-    res.render('home',
-      { title: 'Beardy website',
-        organizations:  docs
-      });
+    res.render( 'home', {
+      title : 'Beardy website',
+      organizations : organizations
+    });
   });
+
+
+  // Organizations.all((err, docs) => {
+  //   if (err) {
+  //     throw err;
+  //   }
+  //   res.render('home',
+  //     { title: 'Beardy website',
+  //       organizations:  docs
+  //     });
+  // });
 });
+
 
 
 // SHOW ========================================

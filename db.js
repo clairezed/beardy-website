@@ -1,32 +1,37 @@
-var MongoClient = require('mongodb').MongoClient
+const config = require('./config')(app.get('env'));
+const mongoose   = require('mongoose');
+mongoose.connect(config.mongo.url)
 
-var state = {
-  db: null,
-}
+// =====================================================
+// var MongoClient = require('mongodb').MongoClient
 
-exports.connect = function(url, done) {
-  console.log("db connect --------------------------------")
-  if (state.db) return done()
+// var state = {
+//   db: null,
+// }
 
-  MongoClient.connect(url, function(err, db) {
-    if (err) return done(err)
-    state.db = db
-    done()
-  })
-}
+// exports.connect = function(url, done) {
+//   console.log("db connect --------------------------------")
+//   if (state.db) return done()
 
-exports.get = function() {
-  console.log("db get --------------------------------")
-  return state.db
-}
+//   MongoClient.connect(url, function(err, db) {
+//     if (err) return done(err)
+//     state.db = db
+//     done()
+//   })
+// }
 
-exports.close = function(done) {
-  console.log("db close --------------------------------")
-  if (state.db) {
-    state.db.close(function(err, result) {
-      state.db = null
-      state.mode = null
-      done(err)
-    })
-  }
-}
+// exports.get = function() {
+//   console.log("db get --------------------------------")
+//   return state.db
+// }
+
+// exports.close = function(done) {
+//   console.log("db close --------------------------------")
+//   if (state.db) {
+//     state.db.close(function(err, result) {
+//       state.db = null
+//       state.mode = null
+//       done(err)
+//     })
+//   }
+// }

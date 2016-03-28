@@ -32,7 +32,7 @@
 			}
 		},
 		gridEl = document.getElementById('theGrid'),
-		sidebarEl = document.getElementById('theSidebar'),
+		// sidebarEl = document.getElementById('theSidebar'),
 		gridItemsContainer = gridEl.querySelector('section.grid'),
 		contentItemsContainer = gridEl.querySelector('section.content'),
 		gridItems = gridItemsContainer.querySelectorAll('.grid__item'),
@@ -40,8 +40,8 @@
 		closeCtrl = contentItemsContainer.querySelector('.close-button'),
 		current = -1,
 		lockScroll = false, xscroll, yscroll,
-		isAnimating = false,
-		menuCtrl = document.getElementById('menu-toggle');
+		isAnimating = false;
+		// menuCtrl = document.getElementById('menu-toggle');
 		// menuCloseCtrl = sidebarEl.querySelector('.close-button');
 
 	/**
@@ -64,9 +64,25 @@
 	function scrollX() { return window.pageXOffset || docElem.scrollLeft; }
 	function scrollY() { return window.pageYOffset || docElem.scrollTop; }
 
+	function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
 	function init() {
-		console.log("init");
 		initEvents();
+		initFromAnchor();
+	}
+
+	function initFromAnchor() {
+		item = gridEl.querySelector("a[href='"+window.location.hash+"']")
+		if (!!item)
+			eventFire(item, 'click');
 	}
 
 	function initEvents() {
@@ -74,7 +90,6 @@
 		[].slice.call(gridItems).forEach(function(item, pos) {
 			// grid item click event
 			item.addEventListener('click', function(ev) {
-				console.log("item click");
 				ev.preventDefault();
 				if(isAnimating || current === pos) {
 					return false;

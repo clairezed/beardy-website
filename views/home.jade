@@ -6,10 +6,11 @@ block content
 
     section.grid
       each organization, i in organizations
-        a.grid__item(href="##{organization.name}")
+        a.grid__item(href="##{organization.slug}")
           h2.title.title--preview= organization.name
           .meta.meta--preview
-            span.meta__date= organization.date
+            span.meta__date= organization.date_fr
+
 
     section.content(style="top:173px;")
       .scroll-wrap
@@ -18,11 +19,12 @@ block content
             //- span.categorry.category--full Test
             h2.title.title--full= organization.name
             .meta.meta--full
-              span.meta__date= organization.date
+              span.meta__date= organization.date_fr
             .row
               .col-md-6
                 p= organization.description
-                img.img-responsive(src="./images/#{organization.picture}" )
+                if organization.picture
+                  img.img-responsive(src="./images/#{organization.picture}" )
               .col-md-6
                 img.img-responsive(src="./images/#{organization.tract}" )
 
