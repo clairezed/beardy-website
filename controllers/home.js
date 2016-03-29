@@ -1,14 +1,16 @@
-var express = require('express');
-var router = express.Router();
-//var mongo = require('mongodb')
-// var db = require('../db')
+'use strict';
 
-var Organizations = require('../models/organization')
+// Dependencies ----------------------------------------------
+
+const express = require('express');
+const router = express.Router();
+const Organization = require('../models/organization')
 
 // INDEX =======================================
 
 router.get('/', (req, res, next) => {
-  Organizations.find( function ( err, organizations, count ){
+  // Organization.find(function ( err, organizations, count ){
+  Organization.find({}).sort({date: 'desc'}).exec(function ( err, organizations, count ){
     if (err) {
       throw err;
     }
@@ -17,17 +19,6 @@ router.get('/', (req, res, next) => {
       organizations : organizations
     });
   });
-
-
-  // Organizations.all((err, docs) => {
-  //   if (err) {
-  //     throw err;
-  //   }
-  //   res.render('home',
-  //     { title: 'Beardy website',
-  //       organizations:  docs
-  //     });
-  // });
 });
 
 
