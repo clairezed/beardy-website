@@ -1,7 +1,7 @@
 [
   {
     "name": "Lyon BD Festival",
-    "website_url": "http://www.lyonbd.com/",
+    "website_url": "www.lyonbd.com",
     "description": "Lyon BD Festival, Comédie Odéon",
     "date": "2013-06-14T22:00:00.000Z",
     "tract": "20130614_lyonbd_tract.png",
@@ -9,7 +9,7 @@
   },
   {
     "name": "Journalisme et citoyenneté",
-    "website_url": "http://www.journalisme.com/",
+    "website_url": "www.journalisme.com",
     "description": "Journalisme et citoyenneté, la Sorbonne",
     "date": "2013-06-14T22:00:00.000Z",
     "tract": "20130614_journalisme_citoyennete_tract.jpg",
@@ -18,7 +18,7 @@
   },
   {
     "name": "Le Panthéon",
-    "website_url": "http://www.paris-pantheon.fr/",
+    "website_url": "www.paris-pantheon.fr",
     "date": "2013-08-26T22:00:00.000Z",
     "tract": "20130826_pantheon_tract.jpg",
     "picture": "20130826_pantheon_pic.png",
@@ -26,7 +26,7 @@
   },
     {
     "name": "Institut Poincaré",
-    "website_url": "http://www.ihp.fr/",
+    "website_url": "www.ihp.fr",
     "description": "Institut Poincaré - Journée des 30 ans de la Smai - Société de mathématiques appliquées et industrielles",
     "date": "2013-10-07T22:00:00.000Z",
     "tract": "20131007_insitut_poincare_tract.jpg",
@@ -35,7 +35,7 @@
   },
     {
     "name": "Institut Carnot",
-    "website_url": "http://www.instituts-carnot.eu/",
+    "website_url": "www.instituts-carnot.eu",
     "description": "Le rendez-vous de la recherche et du développement - Institut Carnot",
     "date": "2013-10-10T22:00:00.000Z",
     "tract": "20131010_institut_carnot_tract.jpg",
@@ -45,7 +45,7 @@
   {
     "name": "Prix Goncourt",
     "description": "Remise du prix Goncourt 2013",
-    "website_url": "http://academie-goncourt.fr/",
+    "website_url": "academie-goncourt.fr",
     "date": "2013-11-04T22:00:00.000Z",
     "tract": "2013114_goncourt_tract.jpg",
     "picture": "2013114_goncourt.png",
@@ -54,7 +54,7 @@
   {
     "name": "GREP Toulouse",
     "description": "Cloture du cycle de conférences-débats du CREP Midi-Pyrénées",
-    "website_url": "http://www.grep-mp.fr/html/accueil.htm",
+    "website_url": "www.grep-mp.fr",
     "date": "2013-05-27T22:00:00.000Z",
     "tract": "20130527_grep_toulouse_tract.jpg",
     "picture": "20130527_grep_toulouse_pic.png",
@@ -63,7 +63,7 @@
   {
     "name": "EADS",
     "description": "EADS General Assembly",
-    "website_url": "http://www.airbusgroup.com/int/en.html",
+    "website_url": "www.airbusgroup.com",
     "date": "2013-05-29T22:00:00.000Z",
     "tract": "20130529_eads_tract.jpg",
     "picture": "20130529_eads_pic.png",
