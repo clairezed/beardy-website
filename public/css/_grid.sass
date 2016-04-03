@@ -25,7 +25,7 @@
   opacity: 1
 
 
-/* Grid item */
+/* Grid item =========================================================== */
 .grid__item
   padding: 45px 55px 30px
   position: relative
@@ -210,13 +210,13 @@
 
 
 .meta__date,
-.meta__reading-time
+.meta__location
   display: block
   float: left
   color: #aaa
 
 
-.meta__reading-time
+.meta__location
   text-align: right
   float: right
 
@@ -226,6 +226,11 @@
   clear: both
   text-align: left
   padding: 5px 0
+  color: #aaa
+  a
+    color: #aaa
+    &:hover, &:focus
+      color: #888
 
 
 .meta__misc--seperator
@@ -254,7 +259,7 @@
 .meta--preview
   .meta__avatar,
   .meta__date,
-  .meta__reading-time
+  .meta__location
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s
     transition: transform 0.3s, opacity 0.3s
     -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1)
@@ -272,7 +277,7 @@
   transition-delay: 0.17s
 
 
-.grid__item--loading .meta__reading-time
+.grid__item--loading .meta__location
   -webkit-transition-delay: 0.24s
   transition-delay: 0.24s
 
@@ -280,7 +285,7 @@
 .grid__item--loading
   .meta__avatar,
   .meta__date,
-  .meta__reading-time
+  .meta__location
     -webkit-transform: scale3d(0.5,0.5,1)
     transform: scale3d(0.5,0.5,1)
     opacity: 0
@@ -325,7 +330,7 @@
   transition: transform $anim-time
 
 
-/* main content */
+/* main content =========================================================== */
 .content
   position: absolute
   top: 0
@@ -348,7 +353,7 @@
 .scroll-wrap
   position: absolute
   width: 100%
-  height: 100%
+  height: 95%
   left: 0
   top: 0
   z-index: 1
@@ -396,11 +401,12 @@
 
 .title--full
   font-size: 3.25em
+  margin-bottom: 30px
 
 
 .meta--full
   font-size: 1em
-  margin: 0 auto 2em
+  margin: 0 auto 0
   max-width: 1200px
   .meta__author
     display: block
@@ -424,14 +430,17 @@
   .meta__avatar
     margin: 1em auto
 
-
+.img-tract
+  border: 1px solid #ddd
+.ghost-row
+  height: 15px
 
 .category--full,
 .title--full,
 .meta--full .meta__avatar,
 .meta--full .meta__author,
 .meta--full .meta__date,
-.meta--full .meta__reading-time
+.meta--full .meta__location
   opacity: 0
 
 
@@ -449,7 +458,7 @@
   .meta__avatar,
   .meta__author,
   .meta__date,
-  .meta__reading-time
+  .meta__location
     -webkit-transform: scale3d(0.5,0.5,1)
     transform: scale3d(0.5,0.5,1)
 
@@ -461,7 +470,7 @@
   .meta--full .meta__avatar,
   .meta--full .meta__author,
   .meta--full .meta__date,
-  .meta--full .meta__reading-time
+  .meta--full .meta__location
     opacity: 1
     -webkit-transform: translate3d(0,0,0)
     transform: translate3d(0,0,0)
@@ -493,7 +502,7 @@
   transition-delay: 0.27s
 
 
-.content__item--show .meta--full .meta__reading-time
+.content__item--show .meta--full .meta__location
   -webkit-transition-delay: 0.34s
   transition-delay: 0.34s
 

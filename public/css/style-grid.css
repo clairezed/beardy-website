@@ -1,4 +1,45 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot?50119024");
+  src: url("../font/fontello.eot?50119024#iefix") format("embedded-opentype"), url("../font/fontello.woff2?50119024") format("woff2"), url("../font/fontello.woff?50119024") format("woff"), url("../font/fontello.ttf?50119024") format("truetype"), url("../font/fontello.svg?50119024#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8 */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120% */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-calendar:before {
+  content: '\e800'; }
+
+.icon-location:before {
+  content: '\e801'; }
+
+.icon-cancel:before {
+  content: '\e802'; }
+
 /* Thème de base, layout */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -103,7 +144,7 @@ nav.navbar {
 .view-single .grid::after {
   opacity: 1; }
 
-/* Grid item */
+/* Grid item =========================================================== */
 .grid__item {
   padding: 45px 55px 30px;
   position: relative;
@@ -267,12 +308,12 @@ nav.navbar {
   filter: none; }
 
 .meta__date,
-.meta__reading-time {
+.meta__location {
   display: block;
   float: left;
   color: #aaa; }
 
-.meta__reading-time {
+.meta__location {
   text-align: right;
   float: right; }
 
@@ -280,7 +321,12 @@ nav.navbar {
   display: block;
   clear: both;
   text-align: left;
-  padding: 5px 0; }
+  padding: 5px 0;
+  color: #aaa; }
+  .meta__misc a {
+    color: #aaa; }
+    .meta__misc a:hover, .meta__misc a:focus {
+      color: #888; }
 
 .meta__misc--seperator {
   padding: 20px 0 0;
@@ -303,7 +349,7 @@ nav.navbar {
 
 .meta--preview .meta__avatar,
 .meta--preview .meta__date,
-.meta--preview .meta__reading-time {
+.meta--preview .meta__location {
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
@@ -317,13 +363,13 @@ nav.navbar {
   -webkit-transition-delay: 0.17s;
   transition-delay: 0.17s; }
 
-.grid__item--loading .meta__reading-time {
+.grid__item--loading .meta__location {
   -webkit-transition-delay: 0.24s;
   transition-delay: 0.24s; }
 
 .grid__item--loading .meta__avatar,
 .grid__item--loading .meta__date,
-.grid__item--loading .meta__reading-time {
+.grid__item--loading .meta__location {
   -webkit-transform: scale3d(0.5, 0.5, 1);
   transform: scale3d(0.5, 0.5, 1);
   opacity: 0; }
@@ -362,7 +408,7 @@ nav.navbar {
   -webkit-transition: -webkit-transform 0.5s;
   transition: transform 0.5s; }
 
-/* main content */
+/* main content =========================================================== */
 .content {
   position: absolute;
   top: 0;
@@ -383,7 +429,7 @@ nav.navbar {
 .scroll-wrap {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 95%;
   left: 0;
   top: 0;
   z-index: 1;
@@ -424,11 +470,12 @@ nav.navbar {
   color: #1d3777; }
 
 .title--full {
-  font-size: 3.25em; }
+  font-size: 3.25em;
+  margin-bottom: 30px; }
 
 .meta--full {
   font-size: 1em;
-  margin: 0 auto 2em;
+  margin: 0 auto 0;
   max-width: 1200px; }
   .meta--full .meta__author {
     display: block;
@@ -448,12 +495,18 @@ nav.navbar {
   .meta--full .meta__avatar {
     margin: 1em auto; }
 
+.img-tract {
+  border: 1px solid #ddd; }
+
+.ghost-row {
+  height: 15px; }
+
 .category--full,
 .title--full,
 .meta--full .meta__avatar,
 .meta--full .meta__author,
 .meta--full .meta__date,
-.meta--full .meta__reading-time {
+.meta--full .meta__location {
   opacity: 0; }
 
 .content__item p {
@@ -467,7 +520,7 @@ nav.navbar {
 .meta--full .meta__avatar,
 .meta--full .meta__author,
 .meta--full .meta__date,
-.meta--full .meta__reading-time {
+.meta--full .meta__location {
   -webkit-transform: scale3d(0.5, 0.5, 1);
   transform: scale3d(0.5, 0.5, 1); }
 
@@ -476,7 +529,7 @@ nav.navbar {
 .content__item--show .meta--full .meta__avatar,
 .content__item--show .meta--full .meta__author,
 .content__item--show .meta--full .meta__date,
-.content__item--show .meta--full .meta__reading-time {
+.content__item--show .meta--full .meta__location {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -502,7 +555,7 @@ nav.navbar {
   -webkit-transition-delay: 0.27s;
   transition-delay: 0.27s; }
 
-.content__item--show .meta--full .meta__reading-time {
+.content__item--show .meta--full .meta__location {
   -webkit-transition-delay: 0.34s;
   transition-delay: 0.34s; }
 
@@ -607,7 +660,9 @@ nav.navbar {
     transition: opacity 0.3s; }
   .grid__item:hover::before,
   .grid__item:focus::before {
-    box-shadow: 3px 7px 11px rgba(5, 1, 3, 0.15); }
+    -webkit-box-shadow: 8px 8px 8px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 8px 8px 8px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 8px 8px 8px -9px rgba(0, 0, 0, 0.75); }
   .grid__item--loading.grid__item::before {
     opacity: 0; } }
 

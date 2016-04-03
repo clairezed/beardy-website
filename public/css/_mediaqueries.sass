@@ -85,8 +85,9 @@ $viewport_xxl:  $item_width * 6  /* 6 columns */
 
   .grid__item:hover::before,
   .grid__item:focus::before
-    // border: 3px solid rgba(102, 98, 91 ,0.2)
-    box-shadow: 3px 7px 11px rgba(5, 1, 3, 0.15)
+    -webkit-box-shadow: 8px 8px 8px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 8px 8px -9px rgba(0,0,0,0.75);
+    box-shadow: 8px 8px 8px -9px rgba(0,0,0,0.75);
 
 
   .grid__item--loading.grid__item::before

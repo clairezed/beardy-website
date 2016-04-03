@@ -9,7 +9,12 @@ block content
         a.grid__item(href="##{organization.slug}")
           h2.title.title--preview= organization.name
           .meta.meta--preview
-            span.meta__date= organization.date_fr
+            span.meta__date
+              i.icon-calendar
+              = organization.date_fr
+            span.meta__location
+              i.icon-location
+              = organization.city
 
 
     section.content(style="top:173px;")
@@ -18,19 +23,30 @@ block content
           article.content__item
             //- span.categorry.category--full Test
             h2.title.title--full= organization.name
-            .meta.meta--full
-              span.meta__date= organization.date_fr
             .row
               .col-md-6
-                p= organization.description
+                .meta.meta--full
+                  span.meta__date
+                    i.icon-calendar
+                    = organization.date_fr
+                  span.meta__location
+                    i.icon-location
+                    = organization.city
+                  span.meta__misc
+                    span
+                      |  Site web :
+                      a(href=organization.website_url)  #{organization.website_url}
+                hr
                 if organization.picture
                   img.img-responsive(src="./images/#{organization.picture}" )
+                p= organization.description
               .col-md-6
-                img.img-responsive(src="./images/#{organization.tract}" )
+                img.img-responsive.img-tract(src="./images/#{organization.tract}" )
+            .row.ghost-row
 
       button.close-button
-        | X
-        span Close
+        i.icon-cancel
+        span Fermer
 
   //- .container
   //-   .row
