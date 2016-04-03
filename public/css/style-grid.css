@@ -40,6 +40,9 @@
 .icon-cancel:before {
   content: '\e802'; }
 
+.icon-mail:before {
+  content: '\e803'; }
+
 /* Thème de base, layout */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -117,6 +120,9 @@ nav.navbar {
 
 .content-body {
   margin-top: 120px; }
+
+section.about h2 {
+  margin-bottom: 30px; }
 
 /* Main content */
 .main {

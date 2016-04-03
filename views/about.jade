@@ -2,24 +2,82 @@ extends layout
 
 block content
 
-  h1 A propos
+  section.about
+    h2 Qu'est-ce que c'est que ce site ?
 
-  h2 Qu'est-ce que c'est que ce site ?
+    .row
+      .col-md-6
 
-  C'est quoi la barbe ?
+        p
+          | Ce site est un
+          strong  exercice pratique d'une développeuse
+          |  qui adôôôôre apprendre à créer de nouvelles choses. La lubie du moment était
+          em  "Je veux savoir comment on fait des extensions pour les navigateurs web"
+          |  et il me fallait un prétexte et support pour donner corps à cette lubie.
 
-  Envie de me frotter aux extensions, besoin d'un prétexte
+        p
+          | Je connais un peu
+          strong: a(href="http://www.labarbelabarbe.org/" target="_blank")  La Barbe, groupe d'action féministe
+          |  qui moque et rend visible la prépondérance masculine dans les organes de pouvoir. Le collectif a déjà pas mal d'actions à son actif, un peu de documentation sur leur site web, leurs cibles ont pour la plupart un site internet...
 
-  Donc site tout à fait officieux, reprenant les infos tirées du site officiel, ceci entièrement dans leur dos.
+        p
+          strong Mon prétexte était tout trouvé :
+          |  je créérai donc une extension qui se déclenchera sur les sites des organisations / entreprises / événements déjà "barbés", et renverra sur le site de la barbe.
+
+      .col-md-6
+
+        p
+          | Mais pour que l'extension réagisse sur les bons sites et renvoie au bon endroit, il fallait qu'elle communique avec le site. Et j'ai jugé plus simple (...) de
+          strong  refaire moi-même un moignon de site,
+          |  répertoriant un échantillon d'actions, et exposant des moyens de renvoyer des informations à l'extension.
+
+        p
+          | En résumé, ce site est tout à fait
+          strong  officieux, fait dans le dos de la Barbe,
+          |  qui n'en est donc responsable en rien.
+
+         p: em (bisou à la Barbe, pas de soucis pour en discuter en cas de problème !)
+
+    br
 
 
+  section.about
+    h2 Informations pratiques, techniques et licences
 
-  h2 Licence et points techniques
+    .row
+      .col-md-6
 
-  Extension à télécharger ici :
+        p L'extension "La Barbe !" existe pour Google Chrome
+        p.help-block: em (et non, rien de dispo pour Firefox, car les extensions sont bien + simples à développer pour chrome, malheureusement).
+        br
+        .text-center
+          a.btn.btn-primary(href="https://chrome.google.com/webstore/detail/la-barbe/ajapagjhlmidjgcbcbpfiambnfdaefah") Installer l'extension (chrome)
 
-  Github
+        br
+        br
+        p
+          i.icon-mail
+          strong: a(href="http://www.clairezuliani.com/contact" target="_blank") Me contacter
 
-  Crédits :
-  - icons
-  - template : p template inspiré de codrops : http://tympanus.net/Development/AnimatedGridLayout/index.html
+      .col-md-6
+
+        p: strong Code source
+        p L'ensemble du code source est disponible sur github
+        ul
+          li
+            a(href="https://github.com/clairezed/beardy-website") code du site web
+          li
+            a(href="https://github.com/clairezed/beardy-extension") code de l'extension
+
+        br
+        p: strong Crédits
+        ul
+          li
+            | Icones :
+            a(href="https://github.com/reduxframework/elusive-iconfont")  Elusive Font Icons
+            |  (téléchargées grâce à
+            a(href="http://fontello.com/")  Fontello
+            |  )
+          li
+            | Design fortement inspiré de
+            a(href="http://tympanus.net/Development/AnimatedGridLayout/index.html")  ce projet de layout animé de Codrops.
