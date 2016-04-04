@@ -3,6 +3,7 @@ extends layout
 block content
 
   section.about
+
     h2 Qu'est-ce que c'est que ce site ?
 
     .row
@@ -54,10 +55,13 @@ block content
           a.btn.btn-primary(href="https://chrome.google.com/webstore/detail/la-barbe/ajapagjhlmidjgcbcbpfiambnfdaefah") Installer l'extension (chrome)
 
         br
-        br
         p
-          i.icon-mail
-          strong: a(href="http://www.clairezuliani.com/contact" target="_blank") Me contacter
+          | Une fois l'extension installée, rendez-vous sur l'un des sites liées aux actions listées
+          a(href="/")  en page d'accueil
+          |  et laissez la magie opérer.
+
+        br
+
 
       .col-md-6
 
@@ -68,8 +72,8 @@ block content
             a(href="https://github.com/clairezed/beardy-website") code du site web
           li
             a(href="https://github.com/clairezed/beardy-extension") code de l'extension
-
         br
+
         p: strong Crédits
         ul
           li
@@ -81,3 +85,8 @@ block content
           li
             | Design fortement inspiré de
             a(href="http://tympanus.net/Development/AnimatedGridLayout/index.html")  ce projet de layout animé de Codrops.
+
+    hr
+    p.pull-right
+      i.icon-mail
+      strong: a(href="http://www.clairezuliani.com/contact" target="_blank") Me contacter
