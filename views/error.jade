@@ -1,6 +1,12 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+
+  if error.status == 404
+    br
+    h1.text-center Oups là, une erreur 404
+    h2.text-center Alors comme ça, on cherche une page qui n'existe pas ?
+  else
+    h1= message
+    h2= error.status
+    pre #{error.stack}

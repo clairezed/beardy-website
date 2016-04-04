@@ -1,8 +1,0 @@
-extends layout
-
-block content
-    h1= title
-    form#formAddOrganization(name="addorganization",method="post",action="/addorganization")
-        input#inputOrganizationName(type="text", placeholder="organizationname", name="organizationname")
-        input#inputOrganizationUrl(type="text", placeholder="organizationurl", name="organizationurl")
-        button#btnSubmit(type="submit") submit

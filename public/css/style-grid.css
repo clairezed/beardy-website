@@ -623,25 +623,7 @@ section.about h2 {
   .content__item {
     font-size: 1em; }
   .grid__item {
-    padding: 45px 45px 30px; }
-  /* Demo ad */
-  body #cdawrap {
-    right: auto;
-    left: 30px;
-    top: auto;
-    bottom: 0;
-    background: none;
-    border: none;
-    width: 240px;
-    background: #f5f5f5; }
-  body #cdawrap .carbon-text {
-    color: #7b7b7b; }
-  body #cdawrap a.carbon-poweredby {
-    color: #7883C4; }
-  body #cdawrap a:hover.carbon-poweredby {
-    color: #333; }
-  body #cdawrap #cda-remove {
-    display: none; } }
+    padding: 45px 45px 30px; } }
 
 @media screen and (min-width: 600px) {
   .grid {
@@ -675,7 +657,7 @@ section.about h2 {
 @media screen and (min-width: 900px) {
   /* 3 columns */
   .grid__item {
-    width: 25%; } }
+    width: 33%; } }
 
 @media screen and (min-width: 1200px) {
   /* 4 columns */

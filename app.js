@@ -1,6 +1,6 @@
 "use strict";
 
-require('./response');
+// require('./response');
 
 // Base dependencies =====================================================
 var express = require('express'),
@@ -84,7 +84,7 @@ app.use('/', homeController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  let err = new Error('Not Found');
+  let err = new Error('Oups, une 404');
   err.status = 404;
   next(err);
 });

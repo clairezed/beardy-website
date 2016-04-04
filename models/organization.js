@@ -3,7 +3,7 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var moment       = require('moment');
-var S = require('string');
+var S            = require('string');
 
 moment.locale('fr')
 
@@ -53,8 +53,6 @@ organizationSchema.statics.seed = function (json_entites, cb) {
 // organizationSchema.set("toObject", { virtuals: true });
 organizationSchema.set("toJSON", { virtuals: true });
 
-// slug
-// toJSON
 
 var Organization = mongoose.model('Organization', organizationSchema);
 
@@ -65,26 +63,3 @@ var Organization = mongoose.model('Organization', organizationSchema);
 // });
 
 module.exports = Organization;
-
-
-// mongo standard db ----------------------------
-// var db = require('../db')
-// var mongo = require('mongodb')
-
-// exports.all = function(cb) {
-//   var collection = db.get().collection('organizations')
-
-//   collection.find().toArray(function(err, docs) {
-//     cb(err, docs)
-//   })
-// }
-
-// exports.one = function(id, cb) {
-//   var id = new mongo.ObjectID(id);
-//   var collection = db.get().collection('organizations')
-
-
-//   collection.find({ _id: id }).toArray(function(err, docs) {
-//     cb(err, docs[0])
-//   })
-// }

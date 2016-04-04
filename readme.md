@@ -1,11 +1,15 @@
 Beardy website
 =========
 
-*2016/01 - Development in progress*
+Site inspired by La Barbe, a French direct action feminist group that fights gender inequality with sarcastic humour and fake beards.
 
-## General information
+This site serves as a support and API provider to a chrome web extension. The extension purpose is to highlight companies, events or organizations dominated by men and towards which La Barbe directed its actions.
 
-- in progress website : https://beardy-website.herokuapp.com/
+Both sites and extension are part of a personal exercise independant from La Barbe.
+
+**Website url** : https://beardy-website.herokuapp.com/
+**Link to download the extension** : https://chrome.google.com/webstore/detail/la-barbe/ajapagjhlmidjgcbcbpfiambnfdaefah
+
 
 ## App creation
 
@@ -37,15 +41,10 @@ $ git commit -m"whatever"
 $ DEBUG=beardy-website:* npm start
 ```
 
-When using config.js :
-```
-$ node app.js dev // ou 'staging', 'production'
-```
-
 
 To install and save in package.json (`-S` = `--save`)
 ```
-npm install -S warehouse
+npm install -S module_name
 ```
 
 ## Database
@@ -63,15 +62,9 @@ $ mongo \\ connect to mongo shell
 > use beardyWebsite
 > db.organizations.insert( { name: "Lyon BD Festival",  website_url: "http://www.lyonbd.com/", beardy_date: "Friday, June 14, 2013"} );
 > db.organizations.find().pretty()
-> db.organizations.remove() // removes one
-> db.organizations.drop() // removes collection
+> db.organizations.remove() // removes one document
+> db.organizations.drop() // removes entire collection
 ```
-
-## Seed data
-
-To populate your db with data in your `seeds` folder, just run `$ seed`.
-cf https://www.npmjs.com/package/node-mongo-seeds
-
 
 ## Deploying to heroku
 
@@ -116,22 +109,17 @@ To exit bash : `$ exit`
 Config vars :
 heroku local will automatically set up the environment based on the contents of the .env file in your local directory. Create a .env file that has the following contents: `TIMES=2`
 To set the config var on Heroku, execute the following:
+```
 $ heroku config:set TIMES=2
+```
+
 View the config vars that are set using heroku config:
+```
 $ heroku config
-
-hide config vars : http://stackoverflow.com/questions/18597510/connect-to-the-database-in-a-heroku-node-js-app-without-revealing-authentication
-
-
-## Tests
-
-To run tests :
-```
-$ jasmine-node ./tests
 ```
 
 
-## Resoures
+## Resources used, bookmarked (and sometimes abandonned)
 
 ### Json DB
 - https://github.com/typicode/lowdb
@@ -165,13 +153,9 @@ $ jasmine-node ./tests
 - http://tympanus.net/Development/BookPreview/
 
 
-### Todo
+### Todo in case of motivation
 
 - serialize api data
 - find url helper
-- styling with bootstrap ?
-- js plugin to do simili SPA and display info en page
-
-### if continuing project
+- form to add data
 - basic authentication
-- form to add events
