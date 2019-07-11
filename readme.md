@@ -119,7 +119,7 @@ $ heroku config
 ```
 
 
-## Resources used, bookmarked (and sometimes abandonned)
+## Resources used, bookmarked (and sometimes abandoned)
 
 ### Json DB
 - https://github.com/typicode/lowdb
